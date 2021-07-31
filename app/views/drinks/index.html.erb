@@ -1,0 +1,20 @@
+
+<br />
+<br />
+
+<%= link_to 'Add Drink list', new_drink_path %> <br />
+
+
+<%= @drink.each do |drink|%>
+<p>
+
+  Name: <%= link_to drink.name, drink_path(drink) %> <br />
+  Size: <%= drink.size%> <br />  | <%= link_to 'Edit',
+        edit_drink_path(drink)%>   | <%= link_to 'Delete',
+              drink, method: :delete %>
+
+  </P>
+
+  <% end %>
+
+  # to find the correct path use cmd  $ rake routes
